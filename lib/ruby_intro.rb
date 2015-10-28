@@ -28,22 +28,43 @@ def max_2_sum arr
   # YOUR CODE HERE
 end
 
-def sum_to_n? arr, n
-  # YOUR CODE HERE
+def sum_to_n?(array, n)
+
+    array_size = array.size
+
+    i = 0
+
+    while i < array_size do
+        argument = array.slice!(0)
+        array.each{|x| return true if x + argument == n}
+        i += 1
+    end
+    return false
 end
 
 # Part 2
 
 def hello(name)
+  return "Hello, "+name
   # YOUR CODE HERE
 end
 
 def starts_with_consonant? s
+  
+  if s.length==0
+    return false
+  end
+  str="bcdfghjklmnprstvwxyz"
+  str=str+str.upcase
+  return !( str.index(s[0])==nil)
   # YOUR CODE HERE
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s =~ /^[0-1]+$/
+    return s.to_i(2) % 4 == 0 unless s == "0"
+  end
+  return false
 end
 
 # Part 3
