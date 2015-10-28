@@ -3,7 +3,18 @@
 # Part 1
 
 def sum arr
-  return 0
+  
+  if arr.length==0
+    return 0
+  else 
+    i=0
+    sum=0
+    until i>arr.length-1 do
+      sum +=arr[i]
+      i +=1
+    end
+  end
+  return sum
   # YOUR CODE HERE
 end
 
