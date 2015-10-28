@@ -3,7 +3,7 @@
 # Part 1
 
 def sum arr
-  return 1
+  return 0
   # YOUR CODE HERE
 end
 
