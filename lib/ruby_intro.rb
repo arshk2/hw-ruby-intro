@@ -7,18 +7,24 @@ def sum arr
   if arr.length==0
     return 0
   else 
-    i=0
     sum=0
-    until i>arr.length-1 do
-      sum +=arr[i]
-      i +=1
-    end
+    arr.each{|x| sum+=x}
+    return sum
   end
-  return sum
+  
   # YOUR CODE HERE
 end
 
 def max_2_sum arr
+  
+  if arr.length==0
+    return 0
+  elsif arr.length==1
+    return arr[0]
+  else
+    arr_up=arr.sort.reverse
+    return arr_up[0]+arr_up[1]
+  end
   # YOUR CODE HERE
 end
 
