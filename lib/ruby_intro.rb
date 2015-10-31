@@ -62,7 +62,11 @@ end
 
 def binary_multiple_of_4? s
   if s =~ /^[0-1]+$/
-    return s.to_i(2) % 4 == 0 unless s == "0"
+      if s.to_i == 0
+          return true
+      else
+          return s.to_i(2) % 4 == 0 
+      end
   end
   return false
 end
@@ -70,5 +74,45 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(isbn, price)
+    
+    if isbn.empty? or price<=0
+      raise ArgumentError
+    else
+      @isbn = isbn
+      @price = price
+    end
+    
+  end
+  
+  def isbn=(new_isbn)
+      if price<=0
+          raise ArgumentError
+      else
+          @isbn=new_isbn
+      end
+    
+      # your code here
+  end
+  
+  def price=(new_price)
+      if isbn.empty?
+          raise ArgumentError
+      else
+          @price=new_price
+      end
+      # your code here
+  end
+  def isbn
+      @isbn
+  end
+  
+  def price
+    @price
+  end
+  
+  def price_as_string()
+    "$%0.2f" % [@price]
+  end
+  
 end
